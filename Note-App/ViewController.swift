@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if segue.identifier == "updateNoteSegue" {
             vc.note = notesArray[tableView.indexPathForSelectedRow!.row]
+            vc.update = true
         }
     }
     
@@ -37,6 +38,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         APIFunctions.function.delegate = self
         APIFunctions.function.fetchNotes()
         print(notesArray)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        APIFunctions.function.fetchNotes()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        APIFunctions.function.fetchNotes()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

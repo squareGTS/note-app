@@ -103,11 +103,15 @@
                             </barButtonItem>
                             <barButtonItem title="Delete" id="a4L-EV-IKc">
                                 <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="deleteClick:" destination="QhN-tu-TV1" id="bNZ-oa-mha"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="uJS-Ma-Sea" id="g9o-lC-2xf"/>
+                        <outlet property="deleteButton" destination="a4L-EV-IKc" id="7Zy-9A-lAs"/>
                         <outlet property="saveButton" destination="NHb-gh-wTy" id="4YU-ag-F9E"/>
                         <outlet property="titleTextField" destination="c4C-Mx-9UY" id="dIW-JD-Hb9"/>
                     </connections>
